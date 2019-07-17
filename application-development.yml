@@ -39,6 +39,13 @@ ribbon:
   MaxAutoRetries: 0
   MaxAutoRetriesNextServer: 0
   ServerListRefreshInterval: 2000
+hystrix:
+  command:
+    command: 
+      default:
+        execution:
+          timeout:
+            enabled: false
 server: 
   tomcat: 
     accept-count: 20 
