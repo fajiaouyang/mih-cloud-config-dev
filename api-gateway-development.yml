@@ -19,11 +19,15 @@ spring:
       maxPoolPreparedStatementPerConnectionSize: 20
       filters: stat,wall,log4j
       useGlobalDataSourceStat: true
-ribbon: 
-  httpclient:
-    enabled: false
-  okhttp: 
-    enabled: true    
+ribbon:
+  ReadTimeout: 300000
+  ConnectTimeout: 5000   
+zuul:  
+  host: 
+    socket-timeout-millis: 300000
+    connect-timeout-millis: 5000
+    max-total-connections: 100
+    max-per-route-connections: 10    
 feign:
   hystrix: 
     enabled: false
